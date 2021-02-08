@@ -1,5 +1,4 @@
 <div class="exercise-card">
-
     <header class="exercise-card-name">
         <h3>{{this.exercise.getName()}}</h3>
     </header>
@@ -9,8 +8,8 @@
     </div>
 
     <div class="timer">
-        <label for="break-timer" style="display: inline-block;">Break Timer:{{this.currentTime | async ?? this.exercise.getBreakTime()}}</label>
+        <label for="break-timer" style="display: inline-block;">Break Timer: {{this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime()}}</label>
         <h3></h3>
     </div>
-    <button class="complete-set" (click)="onCompleteSet()">Complete Set</button>
+    <p-button class="complete-set" (click)="onCompleteSet()">Complete Set</p-button>
 </div>

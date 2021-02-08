@@ -6,14 +6,10 @@
     border: 1px solid dodgerblue;
     border-radius: 4px;
     width: 90%;
+    padding: 10px;
     max-width: 400px;
     box-shadow: 1px 1px 1px rgba(0,0,0, .4);
     font-size: 16px;
-    padding: 10px;
-    display: grid;
-    grid-template-areas: 
-        "sets-"
-    
 }
 
 .exercise-card-name h3 {
@@ -33,7 +29,7 @@
     padding-left: 30px;
 }
 
-.complete-set {
+::ng-deep .complete-set .p-component{
     width: 100%;
     margin-top: 10px;
     min-height: 30px;

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class WorkoutCardComponent implements OnInit {
   public exercise: Exercise;
-  public currentTime: any = 90;
+  public currentTime: any;
 
   constructor() {
     this.exercise = new Exercise("Benchpress",10,90);
