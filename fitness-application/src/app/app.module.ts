@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WorkoutComponent } from './workout/workout.component';
+import { WorkoutCardComponent } from './workout-card/workout-card.component';
+import { EditCardComponent } from './workout-card/edit-card.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WorkoutComponent
+    WorkoutCardComponent,
+    EditCardComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

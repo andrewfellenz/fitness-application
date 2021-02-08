@@ -1,0 +1,41 @@
+.exercise-card {
+    position: relative;
+    margin: auto;
+    top: 5%;
+    display: block;
+    border: 1px solid dodgerblue;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 1px 1px 1px rgba(0,0,0, .4);
+    font-size: 16px;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 
+        "sets-"
+    
+}
+
+.exercise-card-name h3 {
+    margin: 0;
+}
+
+.timer {
+    margin: auto;
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.timer h3 {
+    margin: 0;
+    display: inline-block;
+
+    padding-left: 30px;
+}
+
+.complete-set {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 30px;
+    height: 15%;
+}
