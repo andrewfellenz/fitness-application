@@ -1,14 +1,16 @@
 <div class="exercise-card">
 
-    <header class="exercise-card-name"><h3>Bench Press</h3></header>
+    <header class="exercise-card-name">
+        <h3>{{this.exercise.getName()}}</h3>
+    </header>
     <div class="sets-reps-container">
         <p class="sets">Sets: 1 of 3</p>
-        <p class="reps">Goal reps for this set: 8</p>
+        <p class="reps">Goal reps for this set: {{this.exercise.getTargetReps()}}</p>
     </div>
 
     <div class="timer">
-        <label for="break-timer" style="display: inline-block;">Break Timer:</label>
-        <app-timer></app-timer>
+        <label for="break-timer" style="display: inline-block;">Break Timer:{{this.currentTime | async ?? this.exercise.getBreakTime()}}</label>
+        <h3></h3>
     </div>
-    <button class="complete-set">Complete Set</button>
+    <button class="complete-set" (click)="onCompleteSet()">Complete Set</button>
 </div>

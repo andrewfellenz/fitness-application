@@ -5,14 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkoutCardComponent } from './workout-card/workout-card.component';
 import { EditCardComponent } from './workout-card/edit-card.component';
-import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkoutCardComponent,
-    EditCardComponent,
-    TimerComponent
+    EditCardComponent
   ],
   imports: [
     BrowserModule,
