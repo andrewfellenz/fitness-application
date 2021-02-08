@@ -11,5 +11,5 @@
         <label for="break-timer" style="display: inline-block;">Break Timer: {{this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime()}}</label>
         <h3></h3>
     </div>
-    <p-button class="complete-set" (click)="onCompleteSet()">Complete Set</p-button>
+    <button pButton pRipple [disabled]="this.completeSetDisabled" label="Complete Set" class="complete-set" (click)="onCompleteSet()"></button>
 </div>

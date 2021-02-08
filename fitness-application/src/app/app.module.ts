@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkoutCardComponent } from './workout-card/workout-card.component';
 import { EditCardComponent } from './workout-card/edit-card.component';
+import { RippleModule } from 'primeng/ripple';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { EditCardComponent } from './workout-card/edit-card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule
+    ButtonModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

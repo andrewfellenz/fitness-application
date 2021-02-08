@@ -1,4 +1,5 @@
 .exercise-card {
+    // background:rgb(200, 255, 200);
     position: relative;
     margin: auto;
     top: 5%;
@@ -8,7 +9,7 @@
     width: 90%;
     padding: 10px;
     max-width: 400px;
-    box-shadow: 1px 1px 1px rgba(0,0,0, .4);
+    box-shadow: 1.5px 1.5px 1px rgba(0,0,0, .5);
     font-size: 16px;
 }
 
@@ -25,11 +26,10 @@
 .timer h3 {
     margin: 0;
     display: inline-block;
-
     padding-left: 30px;
 }
 
-::ng-deep .complete-set .p-component{
+.complete-set {
     width: 100%;
     margin-top: 10px;
     min-height: 30px;
