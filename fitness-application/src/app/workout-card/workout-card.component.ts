@@ -1,5 +1,6 @@
 import { Exercise } from './../exercise.model';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-workout-card',
@@ -12,7 +13,7 @@ export class WorkoutCardComponent implements OnInit {
   public completeSetDisabled: boolean = false;
 
   constructor() {
-    this.exercise = new Exercise("Benchpress", 10, 90);
+    this.exercise = new Exercise("Benchpress", 10, 2);
   }
 
   ngOnInit() {
@@ -21,8 +22,11 @@ export class WorkoutCardComponent implements OnInit {
   onCompleteSet() {
     if (!this.completeSetDisabled) {
       this.currentTime  = this.exercise.startTimer();
+      this.completeSetDisabled = true;
     }
-    this.completeSetDisabled = true;
   }
 
+  log() {
+    console.log(this.currentTime);
+  }
 }

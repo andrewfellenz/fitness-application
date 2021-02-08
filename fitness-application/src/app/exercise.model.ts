@@ -36,7 +36,12 @@ export class Exercise{
 
   startTimer() {
     let timer = new Observable<number>((countDown: Observer<number>) => {
+      countDown.next(this.breakTime);
       setInterval(() => countDown.next(this.breakTime > 0 ? this.breakTime -= 1 : this.breakTime), 1000);
+      console.log(countDown);
+      setTimeout(() => countDown.complete(), this.breakTime * 1000);
+      setTimeout(() => console.log(countDown), this.breakTime * 1000);
+
     });
     return timer;
   }
