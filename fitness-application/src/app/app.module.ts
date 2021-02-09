@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {InputNumberModule} from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,8 @@ import { RippleModule } from 'primeng/ripple';
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]

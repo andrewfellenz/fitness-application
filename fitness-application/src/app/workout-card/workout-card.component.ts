@@ -13,7 +13,7 @@ export class WorkoutCardComponent implements OnInit {
   public completeSetDisabled: boolean = false;
 
   constructor() {
-    this.exercise = new Exercise("Benchpress", 10, 2);
+    this.exercise = new Exercise("Benchpress", 10, 10);
   }
 
   ngOnInit() {
@@ -24,9 +24,5 @@ export class WorkoutCardComponent implements OnInit {
       this.currentTime  = this.exercise.startTimer();
       this.completeSetDisabled = true;
     }
-  }
-
-  log() {
-    console.log(this.currentTime);
   }
 }

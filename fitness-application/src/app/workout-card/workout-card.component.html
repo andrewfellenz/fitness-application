@@ -2,14 +2,24 @@
     <header class="exercise-card-name">
         <h3>{{this.exercise.getName()}}</h3>
     </header>
+    <hr>
     <div class="sets-reps-container">
-        <p class="sets">Sets: 1 of 3</p>
-        <p class="reps">Goal reps for this set: {{this.exercise.getTargetReps()}}</p>
+        <label for="weightUsed" class="weightUsed">Weight: </label>
+        <input class="right-input" name="weightUsed" value="10">
+        <br>
+        <label for="reps" class="reps">Reps for this set: </label>
+        <input class="right-input" name="reps" [value]="this.exercise.getTargetReps()">
+        <br>
+        <label for="break-timer" style="display: inline-block;">Break timer (seconds):</label>
+        <input class="right-input" name="break-timer" [value]="this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime()">
+        <br>
+        <label for="sets" class="sets">Sets: </label>
+        <input class="right-input" name="sets" value="1">
     </div>
 
-    <div class="timer">
+<!--     <div class="timer">
         <label for="break-timer" style="display: inline-block;">Break Timer: {{this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime()}}</label>
         <h3></h3>
-    </div>
+    </div> -->
     <button pButton pRipple [disabled]="this.completeSetDisabled" label="Complete Set" class="complete-set" (click)="onCompleteSet()"></button>
 </div>
