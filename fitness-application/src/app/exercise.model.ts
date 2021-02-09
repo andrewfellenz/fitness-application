@@ -7,40 +7,30 @@ export class Exercise{
 
     private name: string,
     private targetReps: number,
-    private breakTime: number,
-    private description?: string,
-    private targetSets?: number,
+    public breakTime: number,
+    private targetSets: number,
+    private repsPerSet: number,
+    private weightUsed: number[],
+    private currentSet: number = 1,
     private setsCompleted?: number,
-    private repsPerSet?: number,
     private isSuperSet?: boolean,
     private repsCompleted?: number,
     private totalReps?: number[],
-    private weightUsed?: number[],
-    private includeBreakTimer?: boolean
-
-
   ){}
 
 
 
 
-  completeSet() {
-    if (this.includeBreakTimer) {
-      this.startTimer();
-    }
-    //rep number selector becomes available
-    // this.totalReps.push(this.repsCompleted);
-    // this.setsCompleted += 1;
 
-  }
 
   startTimer() {
     let timer = new Observable<number>((countDown: Observer<number>) => {
-      countDown.next(this.breakTime);
-      setInterval(() => countDown.next(this.breakTime > 0 ? this.breakTime -= 1 : this.breakTime), 1000);
+      let timeLeft = this.breakTime;
+      countDown.next(timeLeft);
+      setInterval(() => countDown.next(timeLeft > 0 ? timeLeft -= 1 : timeLeft), 1000);
       console.log(countDown);
-      setTimeout(() => countDown.complete(), this.breakTime * 1000);
-      setTimeout(() => console.log(countDown), this.breakTime * 1000);
+      setTimeout(() => countDown.complete(), timeLeft * 1000);
+      setTimeout(() => console.log(countDown), timeLeft * 1000);
 
     });
     return timer;
@@ -53,6 +43,18 @@ export class Exercise{
   }
   getTargetReps() {
     return this.targetReps;
+  }
+  getTargetSets() {
+    return this.targetSets;
+  }
+  getRepsPerSet() {
+    return this.repsPerSet;
+  }
+  getWeightUsed() {
+    return this.weightUsed[this.currentSet -1];
+  }
+  increaseTargetSets() {
+    this.targetSets = this.targetSets + 1;
   }
 
 }

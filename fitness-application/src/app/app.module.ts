@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { WorkoutCardComponent } from './workout-card/workout-card.component';
 import { EditCardComponent } from './workout-card/edit-card.component';
 import { RippleModule } from 'primeng/ripple';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RippleModule } from 'primeng/ripple';
     AppRoutingModule,
     ButtonModule,
     RippleModule,
-    InputNumberModule
+    InputNumberModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

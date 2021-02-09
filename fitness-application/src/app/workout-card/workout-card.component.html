@@ -6,23 +6,23 @@
     <div class="sets-reps-container">
         <label for="sets" class="sets">Set:</label>
         <div name="sets" class="right-input set-container">
-            <p class="sets-text">1 out of 3</p>
-            <button pButton pRipple type="button" icon="pi pi-plus"></button>
-<!--         <input class="right-input" name="sets" value="1"> -->
+            <p class="sets-text">1 out of {{this.exercise.getTargetSets()}} </p>
+            <button pButton pRipple type="button" icon="pi pi-plus" (click)="this.exercise.increaseTargetSets()"></button>
+            <!--         <input class="right-input" name="sets" value="1"> -->
         </div>
         <br>
         <label for="weightUsed" class="weightUsed">Weight: </label>
-        <input class="right-input" name="weightUsed" value="10">
+        <input class="right-input" name="weightUsed" value="{{this.exercise.getWeightUsed()}}">
         <br>
         <label for="reps" class="reps">Reps for this set: </label>
         <input class="right-input" name="reps" [value]="this.exercise.getTargetReps()">
         <br>
         <label for="break-timer" style="display: inline-block;">Break timer (seconds):</label>
-        <input class="right-input" name="break-timer">
+        <input class="right-input" name="break-timer" [(ngModel)]="this.exercise.breakTime">
         <!--  [value]="this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime() -->
     </div>
 
-<!--     <div class="timer">
+    <!--     <div class="timer">
         <label for="break-timer" style="display: inline-block;">Break Timer: {{this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime()}}</label>
         <h3></h3>
     </div> -->
