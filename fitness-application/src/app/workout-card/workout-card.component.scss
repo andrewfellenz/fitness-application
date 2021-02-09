@@ -36,6 +36,31 @@
     height: 15%;
 }
 
-.right-input {
-    float: right;
+.set-container {
+    margin: 0;
+    display: inline-block;
 }
+
+.sets-text {
+    font-size: 12px;
+    margin: 0;
+    display: inline-block;
+}
+
+.right-input {
+    display: block;
+}
+
+@media only screen and (min-width: 600px) {
+    .right-input {
+        float: right;
+    }
+}
+
+::ng-deep .p-button.p-button-icon-only {
+    max-width: 20px;
+    max-height: 20px;
+    margin: 1px;
+    margin-left: 10px;
+}
+
