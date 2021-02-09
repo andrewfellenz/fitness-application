@@ -4,10 +4,9 @@
     </header>
     <hr>
     <div class="sets-reps-container">
-        <label for="sets" class="sets">Set:</label>
+        <label for="sets" class="sets">{{ 'Set: ' + this.exercise.getCurrentSet() + ' out of ' + this.exercise.getTargetSets()}}</label>
         <div name="sets" class="right-input set-container">
-            <p class="sets-text">1 out of {{this.exercise.getTargetSets()}} </p>
-            <button pButton pRipple type="button" icon="pi pi-plus" (click)="this.exercise.increaseTargetSets()"></button>
+            <button class="p-button-sm" pButton pRipple label="Add Set" type="button" icon="pi pi-plus" (click)="this.exercise.increaseTargetSets()"></button>
             <!--         <input class="right-input" name="sets" value="1"> -->
         </div>
         <br>

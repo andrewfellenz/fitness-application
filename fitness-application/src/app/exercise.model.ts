@@ -53,6 +53,9 @@ export class Exercise{
   getWeightUsed() {
     return this.weightUsed[this.currentSet -1];
   }
+  getCurrentSet() {
+    return this.currentSet;
+  }
   increaseTargetSets() {
     this.targetSets = this.targetSets + 1;
   }

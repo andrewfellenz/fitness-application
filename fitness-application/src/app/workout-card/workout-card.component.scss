@@ -10,7 +10,7 @@
     padding: 10px;
     max-width: 400px;
     box-shadow: 1.5px 1.5px 1px rgba(0,0,0, .5);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .exercise-card-name h3 {
@@ -32,35 +32,19 @@
 .complete-set {
     width: 100%;
     margin-top: 10px;
-    min-height: 30px;
+    min-height: 40px;
     height: 15%;
-}
-
-.set-container {
-    margin: 0;
-    display: inline-block;
-}
-
-.sets-text {
-    font-size: 12px;
-    margin: 0;
-    display: inline-block;
 }
 
 .right-input {
     display: block;
+    min-height: 40px;
+    font-size: 18px;
+    width: 100%;
 }
 
-@media only screen and (min-width: 600px) {
-    .right-input {
-        float: right;
-    }
-}
 
-::ng-deep .p-button.p-button-icon-only {
-    max-width: 20px;
-    max-height: 20px;
-    margin: 1px;
-    margin-left: 10px;
+::ng-deep .p-button {
+    margin-top: 10px;
 }
 
