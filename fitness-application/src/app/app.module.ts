@@ -9,7 +9,8 @@ import { EditViewComponent } from './base-card/edit-view/edit-view.component';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
 import { BaseCardComponent } from './base-card/base-card.component';
-import {CheckboxModule} from 'primeng/checkbox';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,6 @@ import {CheckboxModule} from 'primeng/checkbox';
     WorkoutViewComponent,
     EditViewComponent,
     BaseCardComponent
-
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     RippleModule,
     InputNumberModule,
     FormsModule,
-    CheckboxModule
+    CheckboxModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

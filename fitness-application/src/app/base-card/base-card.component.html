@@ -5,3 +5,15 @@
 <div class="exercise-card">
     <app-edit-view></app-edit-view>
 </div>
+
+
+<div class="schedule-box">
+    <h3 class="title-line" (click)="popFunction()">Schedule Board Concept</h3>
+    <div cdkDropList class="schedule-list-items" (cdkDropListDropped)="drop($event)">
+        <div cdkDrag class="schedule-list-item" *ngFor="let movie of movies">
+            <div class="schedule-list-item-contents">
+                {{ movie }}
+            </div>
+        </div>
+    </div>
+</div>
