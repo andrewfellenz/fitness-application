@@ -1,0 +1,15 @@
+.exercise-card {
+    // background:rgb(200, 255, 200);
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    top: 5%;
+    display: block;
+    border: 1px solid dodgerblue;
+    border-radius: 4px;
+    width: 90%;
+    padding: 10px;
+    max-width: 400px;
+    box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, .5);
+    font-size: 18px;
+}

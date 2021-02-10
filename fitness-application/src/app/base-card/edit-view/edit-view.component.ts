@@ -1,13 +1,14 @@
-import { Exercise } from './../exercise.model';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Exercise } from 'src/app/exercise.model';
+
 
 @Component({
-  selector: 'app-workout-card',
-  templateUrl: './workout-card.component.html',
-  styleUrls: ['./workout-card.component.scss']
+  selector: 'app-edit-view',
+  templateUrl: './edit-view.component.html',
+  styleUrls: ['./edit-view.component.scss']
 })
-export class WorkoutCardComponent implements OnInit {
+export class EditViewComponent implements OnInit {
+
   public exercise: Exercise;
   public currentTime: any;
   public completeSetDisabled: boolean = false;

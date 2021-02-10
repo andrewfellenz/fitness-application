@@ -4,17 +4,20 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WorkoutCardComponent } from './workout-card/workout-card.component';
-import { EditCardComponent } from './workout-card/edit-card.component';
+import { WorkoutViewComponent } from './base-card/workout-view/workout-view.component';
+import { EditViewComponent } from './base-card/edit-view/edit-view.component';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
-
+import { BaseCardComponent } from './base-card/base-card.component';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WorkoutCardComponent,
-    EditCardComponent
+    WorkoutViewComponent,
+    EditViewComponent,
+    BaseCardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     RippleModule,
     InputNumberModule,
-    FormsModule
+    FormsModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
