@@ -7,6 +7,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./base-card.component.scss']
 })
 export class BaseCardComponent implements OnInit {
+  public exerciseList: number[] = [1, 2, 3];
 
   constructor() { }
 
@@ -32,6 +33,6 @@ export class BaseCardComponent implements OnInit {
 
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.exerciseList, event.previousIndex, event.currentIndex);
   }
 }

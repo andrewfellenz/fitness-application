@@ -1,9 +1,14 @@
-<div class="exercise-card">
-    <app-workout-view></app-workout-view>
+<div cdkDropList class="schedule-list-items" (cdkDropListDropped)="drop($event)">
 
-</div>
-<div class="exercise-card">
-    <app-edit-view></app-edit-view>
+    <div cdkDrag class="exercise-card" *ngFor="let element of exerciseList">
+        <div class="test-container">
+            <app-workout-view></app-workout-view>
+        </div>
+    </div>
+    <div cdkDrag class="exercise-card">
+        <app-edit-view></app-edit-view>
+    </div>
+
 </div>
 
 
