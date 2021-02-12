@@ -19,11 +19,6 @@ export class Exercise{
     private totalReps?: number[],
   ){}
 
-
-
-
-
-
   startTimer() {
     let timer = new Observable<number>((countDown: Observer<number>) => {
       let timeLeft = this.breakTime;
@@ -36,33 +31,104 @@ export class Exercise{
     });
     return timer;
   }
+
   getName() {
     return this.name;
   }
+
   getBreakTime() {
     return this.breakTime;
   }
+
   getTargetReps() {
     return this.targetReps;
   }
+
   getTargetSets() {
     return this.targetSets;
   }
+
   getRepsPerSet() {
     return this.repsPerSet;
   }
+
   getWeightUsed() {
     return this.weightUsed[this.currentSet -1];
   }
+
   getCurrentSet() {
     return this.currentSet;
   }
-  increaseTargetSets() {
-    this.targetSets = this.targetSets + 1;
+
+  getSetsCompleted() {
+    return this.setsCompleted;
+  }
+
+  getIsSuperSet() {
+    return this.isSuperSet;
+  }
+
+  getRepsCompleted() {
+    return this.repsCompleted;
+  }
+
+  getTotalReps() {
+    return this.totalReps;
   }
 
   getEditMode() {
     return this.editMode;
+  }
+  setName(name: string) {
+    this.name = name;
+  }
+  
+  setBreakTime(breakTime: number) {
+    this.breakTime = breakTime;
+  }
+
+  setTargetReps(targetReps: number) {
+    this.targetReps = targetReps;
+  }
+
+  setTargetSets(targetSets: number) {
+    this.targetSets = targetSets;
+  }
+
+  setRepsPerSet(repsPerSet: number) {
+    this.repsPerSet = repsPerSet;
+  }
+
+  setWeightUsed(weightUsed: number) {
+    this.weightUsed[this.currentSet - 1] = weightUsed;
+  }
+
+  setCurrentSet(currentSet: number) {
+    this.currentSet = currentSet;
+  }
+
+  setSetsCompleted(setsCompleted: number) {
+    this.setsCompleted = setsCompleted;
+  }
+
+  setIsSuperSet(isSuperSet: boolean) {
+    this.isSuperSet = isSuperSet;
+  }
+
+  setRepsCompleted(repsCompleted: number) {
+    this.repsCompleted = repsCompleted;
+  }
+
+  setTotalReps(totalReps: number[]) {
+    this.totalReps = totalReps;
+  }
+
+  setEditMode(editMode: boolean) {
+    this.editMode = editMode;
+  }
+
+  increaseTargetSets() {
+    this.targetSets = this.targetSets + 1;
   }
 
   toggleEditMode() {

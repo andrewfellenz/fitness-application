@@ -20,6 +20,10 @@ export class WorkoutViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  editMode() {
+  
+  }
+
   onCompleteSet() {
     if (!this.completeSetDisabled) {
       this.currentTime  = this.exercise.startTimer();
