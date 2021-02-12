@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Exercise } from 'src/app/exercise.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Exercise } from 'src/app/models/exercise.model';
 
 
 @Component({
@@ -9,15 +9,13 @@ import { Exercise } from 'src/app/exercise.model';
 })
 export class EditViewComponent implements OnInit {
 
-  public exercise: Exercise;
+  @Input() exercise: Exercise = new Exercise('Test', 10, 90, 4, 0, [135, 155, 175, 205]);
   public currentTime: any;
   public completeSetDisabled: boolean = false;
 
 
 
   constructor() {
-    this.exercise = new Exercise("Benchpress", 10, 90, 4, 10, [150, 180, 200, 210]);
-
   }
 
   ngOnInit() {

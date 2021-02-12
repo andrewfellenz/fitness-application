@@ -1,6 +1,6 @@
-import { Exercise } from '../../exercise.model';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Exercise } from 'src/app/models/exercise.model';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-workout-view',
@@ -8,21 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./workout-view.component.scss']
 })
 export class WorkoutViewComponent implements OnInit {
-  public exercise: Exercise;
-  public exercise2: Exercise;
+
+  @Input() exercise: Exercise = new Exercise('Test', 10, 90, 4, 0, [135, 155, 175, 205]);
   public currentTime: any;
   public completeSetDisabled: boolean = false;
-  public exerciseList: Exercise[] = [];
-
-
 
 
   constructor( ) {
-    this.exercise = new Exercise("Benchpress", 10, 90, 4, 10, [150, 180, 200, 210]);
-    this.exercise2 = new Exercise("Situps",10,90, 3,10,[0,0,0,0] )
-    this.exerciseList.push(this.exercise);
-    this.exerciseList.push(this.exercise2);
-
   }
 
   ngOnInit() {

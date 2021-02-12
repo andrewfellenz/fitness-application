@@ -12,6 +12,7 @@ export class Exercise{
     private repsPerSet: number,
     private weightUsed: number[],
     private currentSet: number = 1,
+    private editMode: boolean = false,
     private setsCompleted?: number,
     private isSuperSet?: boolean,
     private repsCompleted?: number,
@@ -60,4 +61,11 @@ export class Exercise{
     this.targetSets = this.targetSets + 1;
   }
 
+  getEditMode() {
+    return this.editMode;
+  }
+
+  toggleEditMode() {
+    this.editMode = !this.editMode;
+  }
 }
