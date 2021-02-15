@@ -11,13 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { BaseCardComponent } from './base-card/base-card.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AddViewComponent } from './base-card/add-view/add-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkoutViewComponent,
     EditViewComponent,
-    BaseCardComponent
+    BaseCardComponent,
+    AddViewComponent
   ],
   imports: [
     BrowserModule,

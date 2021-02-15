@@ -1,0 +1,13 @@
+
+.add-item {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 400px;
+}
+
+.add-item ::ng-deep .p-component {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
