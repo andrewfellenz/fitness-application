@@ -19,6 +19,7 @@ export class ExercisesService {
   ];
 
 
+
   getExerciseList() {
     return this.exercisesList;
   }

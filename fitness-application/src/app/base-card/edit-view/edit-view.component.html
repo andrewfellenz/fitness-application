@@ -1,7 +1,7 @@
 <header class="exercise-card-name">
     <h3 style='display: inline-block;'>Edit Mode</h3>
-    <button class="edit-button p-button-success p-button-sm" pButton pRipple label="Save" type="button" [routerLink]="['workout']"></button>
-    <button class="edit-button p-button-danger p-button-sm" pButton pRipple label="Delete" type="button"></button>
+    <button class="edit-button p-button-success p-button-sm" pButton pRipple label="Save" type="button" (click)="saveData()"></button>
+    <button class="edit-button p-button-danger p-button-sm" pButton pRipple label="Delete" type="button" (click)="onDelete()"></button>
     <button class="edit-button p-button-warning p-button-sm" pButton pRipple label="Cancel" type="button" (click)="this.exercise.toggleEditMode()"></button>
     <hr>
     <label for="Name" class="Name">Name: </label>
@@ -11,20 +11,20 @@
 <hr>
 <div class="sets-reps-container">
     <label for="sets" class="sets">Sets: </label>
-    <input class="right-input" name="sets" [value]='this.exercise.getCurrentSet()'>
+    <input class="right-input" name="sets" [(ngModel)]='this.targetSets'>
     <p-checkbox value="This 1" label="Customize Each Set"></p-checkbox>
 
     <p-checkbox value="That 1" label="Make Superset"></p-checkbox>
     <br>
     <label for="weightUsed" class="weightUsed">Weight: </label>
-    <input type="number" pattern="[0-9]" min="0" class="right-input" name="weightUsed" value="{{this.exercise.getWeightUsed()}}">
+    <input type="number" pattern="[0-9]" min="0" class="right-input" name="weightUsed" [(ngModel)]="currentWeight">
     <p-checkbox value="This 1" label="Use Bodyweight"></p-checkbox>
     <br>
     <label for="reps" class="reps">Reps for this set: </label>
-    <input class="right-input" name="reps" [value]="this.exercise.getTargetReps()">
+    <input class="right-input" name="reps" [(ngModel)]="this.targetReps">
     <br>
     <label for="break-timer" style="display: inline-block;">Break timer (seconds):</label>
-    <input class="right-input" name="break-timer" [(ngModel)]="this.exercise.breakTime">
+    <input class="right-input" name="break-timer" [(ngModel)]="this.breakTime">
     <p-checkbox value="This 1" label="Disable Break Timer"></p-checkbox>
     <!--  [value]="this.currentTime ? (this.currentTime | async) : this.exercise.getBreakTime() -->
 </div>
