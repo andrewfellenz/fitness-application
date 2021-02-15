@@ -1,5 +1,6 @@
 .exercise-card-name h3 {
     margin: 0;
+    display: inline-block;
 }
 
 .timer {
@@ -21,7 +22,7 @@
     height: 15%;
 }
 
-.right-input {
+.general-input {
     display: block;
     min-height: 40px;
     font-size: 18px;
@@ -35,4 +36,8 @@
 .edit-button {
     float: right;
     margin: 0;
+}
+
+.pad {
+    padding: 10px;
 }

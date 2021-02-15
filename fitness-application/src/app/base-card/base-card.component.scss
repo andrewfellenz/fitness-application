@@ -1,5 +1,4 @@
 .exercise-card {
-    // background:rgb(200, 255, 200);
     position: relative;
     margin: auto;
     margin-top: 30px;
@@ -8,36 +7,27 @@
     border: 1px solid dodgerblue;
     border-radius: 4px;
     width: 90%;
-    padding: 10px;
     max-width: 400px;
     box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, .5);
     font-size: 18px;
-    cursor: move;
     background-color: white;
 }
 
-.schedule-box {
-    position: relative;
-    min-height: 80%;
-    top: 10%;
-    width: 40%;
-    margin: auto;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, .55);
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, .3);
+.drag-bar {
+    height: 40px;
+    width: 100%;
+    background:dodgerblue;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    margin-bottom: 10px;
+    cursor: grab;
 }
-/* 
-.example-custom-placeholder {
-    border: dotted 3px #999;
-    padding: 400px;
-    margin: 1.5% auto;
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-} */
 
-//
-//  cdkDragBoundary=".schedule-box"
-.schedule-list-items .cdk-drop-list-dragging .exercise-card:not(.cdk-drag-placeholder) {
+.drag-bar:active {
+    cursor: grabbing;
+}
+
+.exercise-list-items .cdk-drop-list-dragging .exercise-card:not(.cdk-drag-placeholder) {
     transition: transform 1000ms cubic-bezier(0, 0, 0.2, 1);
 }
 
@@ -46,11 +36,6 @@
 }
 
 
-.cdk-drag-placeholder *{
-    opacity: 0;
-}
-
 .cdk-drag-placeholder {
-    border: dotted 2px rgba(0,0,0, .25);
-    box-shadow: none;
+    opacity: 0.3;
 }

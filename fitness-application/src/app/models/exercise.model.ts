@@ -7,7 +7,7 @@ export class Exercise{
 
     private name: string,
     private targetReps: number,
-    public breakTime: number,
+    private breakTime: number,
     private targetSets: number,
     private repsPerSet: number,
     private weightUsed: number[],
@@ -19,15 +19,14 @@ export class Exercise{
     private totalReps?: number[],
   ){}
 
-  startTimer() {
+  startTimer(breakTime: number) {
     let timer = new Observable<number>((countDown: Observer<number>) => {
-      let timeLeft = this.breakTime;
+      let timeLeft = breakTime;
       countDown.next(timeLeft);
       setInterval(() => countDown.next(timeLeft > 0 ? timeLeft -= 1 : timeLeft), 1000);
       console.log(countDown);
       setTimeout(() => countDown.complete(), timeLeft * 1000);
       setTimeout(() => console.log(countDown), timeLeft * 1000);
-
     });
     return timer;
   }
@@ -134,8 +133,4 @@ export class Exercise{
   toggleEditMode() {
     this.editMode = !this.editMode;
   }
-  // saveData() {
-
-  // }
-
 }
