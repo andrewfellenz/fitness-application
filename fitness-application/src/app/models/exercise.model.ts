@@ -82,7 +82,7 @@ export class Exercise{
   setName(name: string) {
     this.name = name;
   }
-  
+
   setBreakTime(breakTime: number) {
     this.breakTime = breakTime;
   }
@@ -134,4 +134,8 @@ export class Exercise{
   toggleEditMode() {
     this.editMode = !this.editMode;
   }
+  // saveData() {
+
+  // }
+
 }
