@@ -1,5 +1,5 @@
-<div cdkDropList class="schedule-list-items" (cdkDropListDropped)="drop($event)">
-    <div cdkDrag class="exercise-card" *ngFor="let exercise of exercisesList">
+<div cdkDropList cdkDragBoundary="schedule-list-items" class="schedule-list-items" cdkDropListLockAxis="y" (cdkDropListDropped)="drop($event)">
+    <div cdkDrag class="exercise-card" cdkDragBoundary=".schedule-list-items" *ngFor="let exercise of exercisesList">
         <div *ngIf="exercise.getEditMode() === false; else elseBlock">
            <app-workout-view [exercise]="exercise"></app-workout-view>
         </div>
