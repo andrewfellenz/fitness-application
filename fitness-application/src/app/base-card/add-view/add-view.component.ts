@@ -13,6 +13,7 @@ export class AddViewComponent implements OnInit {
 
   constructor(private exerciseService: ExercisesService) { 
     this.exercise = new Exercise('Default Exercise', 10, 90, 3, 0, [135, 135, 135, 135]);
+    this.exercise.setEditMode(true);
   }
 
   ngOnInit(): void {
