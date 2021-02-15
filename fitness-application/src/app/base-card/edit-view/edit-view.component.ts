@@ -45,7 +45,7 @@ export class EditViewComponent implements OnInit {
     this.exercise.setWeightUsed(this.currentWeight);
     this.exercise.setTargetReps(this.targetReps);
     this.exercise.setBreakTime(this.breakTime);
-
+    this.exercise.toggleEditMode();
   }
 
   onDelete() {
