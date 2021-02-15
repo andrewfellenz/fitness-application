@@ -28,5 +28,10 @@ export class ExercisesService {
     this.exercisesList.push(exercise);
   }
 
+  deleteExerciseFromList(exercise: Exercise) {
+    let indexOfExercise = this.exercisesList.indexOf(exercise);
+    this.exercisesList.splice(indexOfExercise, 1);
+  }
+
   constructor() { }
 }

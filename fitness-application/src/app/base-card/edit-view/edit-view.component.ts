@@ -49,6 +49,6 @@ export class EditViewComponent implements OnInit {
   }
 
   onDelete() {
-
+    this.exercisesService.deleteExerciseFromList(this.exercise);
   }
 }
