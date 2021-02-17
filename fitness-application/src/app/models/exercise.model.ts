@@ -12,7 +12,7 @@ export class Exercise{
     private repsPerSet: number,
     private weightUsed: number[],
     private currentSet: number = 1,
-    private sets: number[] = [1,2,3],
+    private sets: number[] = Array.from(new Array(targetSets), (x, i) => i + 1),
     private editMode: boolean = false,
     private setsCompleted?: number,
     private isSuperSet?: boolean,
