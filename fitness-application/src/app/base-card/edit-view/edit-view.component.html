@@ -11,17 +11,22 @@
     <hr>
     <label for="sets">Sets: </label>
     <input class="general-input" name="sets" type="number" pattern="[0-9]" min="0" [(ngModel)]="this.targetSets">
-    <p-checkbox value="PLACEHOLDER" label="Customize Each Set"></p-checkbox>
+    <p-checkbox value="PLACEHOLDER" label="Use this information for all sets"></p-checkbox>
     <p-checkbox value="PLACEHOLDER" label="Make Superset"></p-checkbox>
     <br>
-    <label for="weightUsed">Weight: </label>
-    <input class="general-input" name="weightUsed" type="number" pattern="[0-9]" min="0" [(ngModel)]="currentWeight">
-    <p-checkbox value="PLACEHOLDER" label="Use Bodyweight"></p-checkbox>
-    <br>
-    <label for="reps">Reps for this set: </label>
-    <input class="general-input" name="reps" type="number" pattern="[0-9]" min="0" [(ngModel)]="this.targetReps">
-    <br>
-    <label for="break-timer">Break timer (seconds):</label>
-    <input class="general-input" name="break-timer" type="number" pattern="[0-9]" min="0" [(ngModel)]="this.breakTime">
-    <p-checkbox value="PLACEHOLDER" label="Disable Break Timer"></p-checkbox>
+    <div *ngFor="let set of this.exercise.getSets()">
+        <label for="set-container">Set: {{ set }}</label>
+        <div name="set-container" class="set-container">
+            <label for="weightUsed">Weight: </label>
+            <input class="general-input" name="weightUsed" type="number" pattern="[0-9]" min="0" [(ngModel)]="currentWeight">
+            <p-checkbox value="PLACEHOLDER" label="Use Bodyweight"></p-checkbox>
+            <br>
+            <label for="reps">Reps for this set: </label>
+            <input class="general-input" name="reps" type="number" pattern="[0-9]" min="0" [(ngModel)]="this.targetReps">
+            <br>
+            <label for="break-timer">Break timer (seconds):</label>
+            <input class="general-input" name="break-timer" type="number" pattern="[0-9]" min="0" [(ngModel)]="this.breakTime">
+            <p-checkbox value="PLACEHOLDER" label="Disable Break Timer"></p-checkbox>
+        </div>
+    </div>
 </div>

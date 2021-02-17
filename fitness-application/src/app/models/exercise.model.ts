@@ -12,6 +12,7 @@ export class Exercise{
     private repsPerSet: number,
     private weightUsed: number[],
     private currentSet: number = 1,
+    private sets: number[] = [1, 2, 3],
     private editMode: boolean = false,
     private setsCompleted?: number,
     private isSuperSet?: boolean,
@@ -61,6 +62,10 @@ export class Exercise{
 
   getSetsCompleted() {
     return this.setsCompleted;
+  }
+
+  getSets() {
+    return this.sets;
   }
 
   getIsSuperSet() {
