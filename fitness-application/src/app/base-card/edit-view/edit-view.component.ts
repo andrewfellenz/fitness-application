@@ -11,25 +11,32 @@ export class EditViewComponent implements OnInit {
 
   @Input() exercise: Exercise = new Exercise('Test', 10, 90, 4, 0, [135, 155, 175, 205]);
   public currentTime: any;
-  public completeSetDisabled: boolean = false;
-  public targetSets: number = this.exercise.getTargetSets();
-  public currentWeight: number = this.exercise.getWeightUsed();
-  public targetReps: number = this.exercise.getTargetReps();
-  public breakTime: number = this.exercise.getBreakTime();
+  public completeSetDisabled: boolean[] = [false];
+  public targetSets: number;
+  public weightUsed: number[];
+  public currentIndex: number = 0;
+  public targetReps: number;
+  public breakTime: number;
+  public currentSet: number;
 
   constructor(private exercisesService: ExercisesService) {
+    this.targetSets = this.exercise.getTargetSets();
+    this.weightUsed = [...this.exercise.getWeightUsedList()];
+    this.targetReps = this.exercise.getTargetReps();
+    this.breakTime = this.exercise.getBreakTime();
+    this.currentSet = this.exercise.getCurrentSet();
   }
 
   ngOnInit() {
     this.targetSets = this.exercise.getTargetSets();
-    this.currentWeight = this.exercise.getWeightUsed();
+    this.weightUsed = [...this.exercise.getWeightUsedList()];
     this.targetReps = this.exercise.getTargetReps();
     this.breakTime = this.exercise.getBreakTime();
   }
 
   saveData() {
     this.exercise.setTargetSets(this.targetSets);
-    this.exercise.setWeightUsed(this.currentWeight);
+    this.exercise.setWeightUsed(this.weightUsed);
     this.exercise.setTargetReps(this.targetReps);
     this.exercise.setBreakTime(this.breakTime);
     this.exercise.toggleEditMode();

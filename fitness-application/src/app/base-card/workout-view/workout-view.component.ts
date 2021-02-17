@@ -25,6 +25,7 @@ export class WorkoutViewComponent {
   onCompleteSet() {
     if (!this.completeSetDisabled) {
       this.timer = this.exercise.startTimer(this.breakTime);
+      this.exercise.completeSet();
       this.completeSetDisabled = true;
     }
   }

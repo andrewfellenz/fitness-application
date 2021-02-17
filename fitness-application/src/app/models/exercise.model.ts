@@ -12,13 +12,17 @@ export class Exercise{
     private repsPerSet: number,
     private weightUsed: number[],
     private currentSet: number = 1,
-    private sets: number[] = [1, 2, 3],
+    private sets: number[] = [1,2,3],
     private editMode: boolean = false,
     private setsCompleted?: number,
     private isSuperSet?: boolean,
     private repsCompleted?: number,
     private totalReps?: number[],
   ){}
+
+  completeSet() {
+    this.currentSet++;
+  }
 
   startTimer(breakTime: number) {
     let timer = new Observable<number>((countDown: Observer<number>) => {
@@ -54,6 +58,10 @@ export class Exercise{
 
   getWeightUsed() {
     return this.weightUsed[this.currentSet -1];
+  }
+
+  getWeightUsedList() {
+    return this.weightUsed;
   }
 
   getCurrentSet() {
@@ -103,8 +111,8 @@ export class Exercise{
     this.repsPerSet = repsPerSet;
   }
 
-  setWeightUsed(weightUsed: number) {
-    this.weightUsed[this.currentSet - 1] = weightUsed;
+  setWeightUsed(weightUsed: number[]) {
+    this.weightUsed = weightUsed;
   }
 
   setCurrentSet(currentSet: number) {
